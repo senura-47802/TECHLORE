@@ -1,7 +1,7 @@
 # TECHLORE Site open sorce code
-**this is the official repo for TECHLORE site**
+**This is the official repo for TECHLORE site**
 
-**you have to contribute to our open source**
+**you can also contribute to our open source**
 
 **If you contibuted you can fill the form below in home page of TECHLORE site**
 
