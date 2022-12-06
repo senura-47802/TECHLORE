@@ -15,7 +15,7 @@
 
 **Ofiicial publishing date: 2022/12/06**
 
-**Site address will be anouncing in here on 2022/12/07 at 22:00 pm.**
+**Site address will be anouncing in here on 2022/12/06 at 22:00 pm.**
 
 Contributors:
 
