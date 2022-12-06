@@ -18,6 +18,12 @@
 **Site address will be anouncing in here on 2022/12/07 at 18:00 pm.**
 
 Contributors:
-1)<a herf="https://github.com/senura-47802">Senura Perera</a>
 
-2)<a herf="https://github.com/GAVIFDO">Gaviru Fernando</a>
+**1)[Gaviru Fernando](https://github.com/GAVIFDO)**
+  
+**2)[Senura perera](https://github.com/senura-47802)**
+
+Your name also added to the list when you contributed to this open source.
+
+Thank you !<br>
+GS Programmers
