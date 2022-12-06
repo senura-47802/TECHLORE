@@ -13,9 +13,9 @@
   
 **2.[Senura perera](https://github.com/senura-47802)**
 
-**Ofiicial publishing date: 2022/12/07**
+**Ofiicial publishing date: 2022/12/06**
 
-**Site address will be anouncing in here on 2022/12/07 at 18:00 pm.**
+**Site address will be anouncing in here on 2022/12/07 at 22:00 pm.**
 
 Contributors:
 
