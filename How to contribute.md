@@ -13,4 +13,4 @@ method, with the owners of this repository before making a change.
 
 3.You can send private emails after one day,
 
-4.<a href="gnsprogrammers@gmail.com">Use this email address for private massage after one day you used pullrequest method.</a>
+4.Use this email address for private massage after one day you used pullrequest method - gnsprogrammers@gmail.com
