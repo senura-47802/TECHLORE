@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHLORE | Leaderboard</title>
+  <link rel="shortcut icon" href="img/main_icon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/">Home</a>
+    <a href="news">News</a>
+    <a href="learn">Learn</a>
+    <a href="blogs">Blogs</a>
+    <a href="contact">Contact</a>
+    <a href="quiz">Quiz</a>
+    <a href="challenges">challenge</a>
+    <a href="leaderboard" class="active">Leaderboard</a>
+    <% if(!user){ %>
+    <a id="login" href="login">login</a>
+    <% }else{ %>
+    <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar avatar-popup">
+            </span>
+        </div>
+    <% } %>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <section class="leaderboard">
+    <div class="thead">
+      <p class="tfield-rank">#</p>
+      <p class="tfield-name">Name</p>
+      <p class="tfield-grade">Age</p>
+      <p class="tfield-tasks">Count</p>
+      <p class="tfield-points">PTS</p>
+    </div>
+    <table>
+      <tbody>
+        <% for(var i=0; i<board.length; i++) { %>
+          <%if(board[i].email === `${user}`){%>
+            <tr style="background-color: rgba(58, 183, 238, 0.29); border-radius: 2000px;">
+            <th class="tfield-rank"><%-i+1%></th>
+          <td class="tfield-name"><%-board[i].username%><span style="color: rgba(231, 255, 0, 1);">(You)</span></td>
+            <td class="tfield-grade"><%-board[i].Age%></td>
+          <td class="tfield-tasks"><%-board[i].quizcount%></td>
+          <td class="tfield-points"><%-board[i].points%></td>
+            </tr>
+         <% }else{ %>
+           <tr>
+           <th class="tfield-rank"><%-i+1%></th>
+          <td class="tfield-name"><%-board[i].username%></td>
+          <td class="tfield-grade"><%-board[i].Age%></td>
+          <td class="tfield-tasks"><%-board[i].quizcount%></td>
+          <td class="tfield-points"><%-board[i].points%></td>
+           <% } %>
+        </tr>
+          <%}%>
+        
+      </tbody>
+    </table>
+  </section>
+
+  <div class="copy1">
+    <h3 class="copyright_reserved">CopyRight © GSVprogrammers 2022</h3>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>

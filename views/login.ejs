@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHLORE | Login</title>
+    <link rel="shortcut icon" href="img/main_icon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="news">News</a>
+        <a href="learn">Learn</a>
+        <a href="blogs">Blogs</a>
+        <a href="contact">Contact</a>
+        <a href="quiz">Quiz</a>
+        <a href="challenges">Challenges</a>
+        <a href="leaderboard">Leaderboard</a>
+        <a id="login" class="active" href="login">login</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+  
+  <div class="login_form">
+    <h1>Login Form</h1>
+    <form id="login-form" method="post" action="/login">
+   <div class="imgcontainer">
+    <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
+   </div>
+      <div style="margin-left: 2%; margin-right: 68%; height: 20px; background-color: rgba(252, 40, 40, 0.137254902);
+  color: #ce4747;
+  text-align: center;
+        padding: 0.2em 1em;
+  border-radius: 8px;
+  width: max-content;
+        font-size: 17px; display: none;" id="error">
+        Invalid Password
+      </div>
+    <label for="username" style="color: white;"><b>Username</b></label><br>
+    <input type="text" placeholder="Enter Username" name="username" required><br>
+
+    <label for="password" style="color: white;"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" name="password" required><br>
+
+    <button type="submit" onclick="sucmit()">Login</button><br>
+  
+</form>
+    <p  style="color: white;">Don't have an Account? <a href="/signup"  style="color: #2b96f3;">Sign-up</a><p>
+  </div>
+  
+    <div class="copy1">
+        <h3 class="copyright_reserved">CopyRight © GSV programmers 2022</h3>
+    </div>
+  <script> 
+  //   const error = document.getElementById('error')
+  //   const login = (data) => {
+  //   axios.post('/login', {
+    
+  // })
+  // .then(function (response) {
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   console.log(error);
+  // });
+  //   }
+  //     document.querySelector("#login-form").addEventListener("submit", (e) => {
+		// 	e.preventDefault()
+		// 	const data = Object.fromEntries(new FormData(e.target).entries())
+		// 	// login(data)
+  //      console.log(data)
+		// })
+
+  //   function error(message) {
+  //     console.log('hii')
+  //   }
+  </script>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "techlore",
+  "version": "1.0.0",
+  "description": "**This is the official repo for TECHLORE site**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSprogrammers/TECHLORE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSprogrammers/TECHLORE/issues"
+  },
+  "homepage": "https://github.com/GSprogrammers/TECHLORE#readme",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "better-sqlite3": "^8.0.1",
+    "body-parser": "^1.20.1",
+    "connect-mongo": "^3.0.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "html": "^1.0.0",
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.8.0",
+    "node-fetch": "^2.6.1",
+    "quick.db": "^9.0.7",
+    "uuid": "^9.0.0"
+  }
+}

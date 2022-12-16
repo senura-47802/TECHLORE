@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHLORE | Admin</title>
+  <link rel="shortcut icon" href="img/main_icon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://js.upload.io/upload-js/v2"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="/">Home</a>
+    <a href="news">News</a>
+    <a href="learn">Learn</a>
+    <a href="blogs">Blogs</a>
+    <a href="contact">Contact</a>
+    <a href="quiz">Quiz</a>
+    <a href="challenges">Challenges</a>
+    <a href="leaderboard">Leaderboard</a>
+    <a href="admin" class="active">admin</a>
+    <% if(!user){ %>
+    <a id="login" href="login">login</a>
+    <% }else{ %>
+    <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar avatar-popup">
+            </span>
+        </div>
+    <% } %>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  
+    <div class="admin_hero"> 
+      <h1>Hello admin,</h1>
+      <h2>if you can see this congratz, you are an admin!
+      <p>in this tab you can add more news, blogs, courses, quizzes, etc... from the below sections you can do those! congratz on your journey! </p>
+    </div>
+
+    <div class="news_form">
+    <h2>Add news here</h2>
+    <h3>be sure about spellings and links<h3>
+    <form class="admin_news" action="/addnews" method="post">
+    <label for="title">News title:</label><br>
+    <input type="text" id="title" name="title" placeholder="enter the title of new news" required>          <br>
+    <label for="description">discription:</label><br>
+    <input type="text" id="description" name="description" placeholder="description here" required>         <br>
+    <label for="link">link:</label><br>
+    <input type="link" id="link" name="link" placeholder="link of news here" required>  
+    <br>
+      <label for="date">date:</label><br>
+      <input type="date" id="date" name="date" placeholder="Date Of News">  
+      <br>
+    <label for="image">image:</label><br>
+    <input type="file" id="image1" name="filename" accept=".img,.png,.jpg,.jpeg,.svg,.avif" required>
+      <input type="text" id="image_data1" name="image_data" placeholder="data of image" readonly>
+    <br><br>
+    <input type="submit" id="image" value="submit">
+    </form> 
+    </div>
+
+    <div class="blogs_form">
+    <h2>Add blogs here</h2>
+    <h3>be sure about spellings and links<h3>
+    <form class="admin_blogs" action="/addblog" method="post">
+    <label for="title">blog title:</label><br>
+    <input type="text" id="title" name="title" placeholder="enter the title of blog"  required>              <br>
+    <label for="description">discription:</label><br>
+    <input type="text" id="description" name="description" placeholder="description here" required>         <br>
+    <label for="link">link:</label><br>
+    <input type="link" id="link" name="link" placeholder="link of blog here" required>  
+    <br>
+    <label for="image">image:</label><br>
+    <input type="file" id="image2" name="filename" accept=".img,.png,.jpg,.jpeg,.svg,.avif" required>
+      <input type="text" id="image_data2" name="image_data" placeholder="data of image" readonly>
+    <br><br>
+    <input type="submit" id="image" value="submit">
+    </form> 
+    </div>
+
+    <div class="lessons_form">
+    <h2>Add lessons here</h2>
+    <h3>be sure about spellings and links<h3>
+    <form class="admin_lessons" action="/addlearn" method="post">
+    <label for="title">lesson title:</label><br>
+    <input type="text" id="title" name="title" placeholder="enter the title of course" required>              <br>
+    <label for="description">discription:</label><br>
+    <input type="text" id="description" name="description" placeholder="description here" required>         <br>
+    <label for="link">link:</label><br>
+    <input type="link" id="link" name="link" placeholder="link of tutorials here" required>  
+    <br>
+    <label for="setup_link">setup link:</label><br>
+    <input type="link" id="setup_link" name="setup_link" placeholder="link of setup here" required>  
+    <br>
+    <label for="image">image:</label><br>
+    <input type="file" id="image3" name="filename" accept=".img,.png,.jpg,.jpeg,.svg,.avif" required>
+      <input type="text" id="image_data3" name="image_data" placeholder="data of image" readonly>
+    <br><br>
+    <input type="submit" id="image" value="submit">
+    </form> 
+    </div>
+
+      <div class="challenges_form">
+    <h2>Add challenges here</h2>
+    <h3>be sure about spellings and links<h3>
+    <form class="admin_blogs" action="/addchallenge" method="post">
+    <label for="title">challenge title:</label><br>
+    <input type="text" id="title" name="title" placeholder="enter the title of challenge" required>              <br>
+    <label for="description">discription:</label><br>
+    <input type="text" id="description" name="description" placeholder="description here" required>
+      <br>
+      <label for="date">Start date:</label><br>
+      <input type="date" id="sdate" name="sdate" placeholder="Start Date"> 
+      <br>
+      <label for="date">End date:</label><br>
+      <input type="date" id="edate" name="edate" placeholder="End Date"> 
+    <br><br>
+    <input type="submit" id="image" value="submit">
+    </form> 
+    </div>
+
+      <div class="challenges_form">
+    <h2>Add points here</h2>
+    <h3>be sure about numbers<h3>
+    <form class="admin_challenges" action="/addpoints" method="post">
+    <label for="username">username:</label><br>
+    <input type="text" id="username" name="username" placeholder="username of the contributer" required>              <br>
+    <label for="ponits">points:</label><br>
+    <input type="text" id="points" name="points" placeholder="points here" required>         <br>
+    <label for="count">count:</label><br>
+    <input type="text" id="count" name="count" placeholder="count of contributes" required>    
+    <br><br>
+    <input type="submit" id="image" value="submit">
+    </form> 
+    </div>
+
+    <div class="challenges_form">
+    <h2>Add Quizes here</h2>
+    <h3>be sure about answerss<h3>
+    <form class="admin_challenges" action="" method="post">
+    <label for="quiz_title">Title:</label><br>
+    <input type="text" id="quiz_title" name="quiz_title" placeholder="quiz title" required>              <br>
+      
+    <label for="ponits">disciprition</label><br>
+    <input type="text" id="points" name="points" placeholder="discription here" required><br>
+      <!--       question starts -->
+    <br><label for="question">question 1:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>
+    <br>
+      <label for="answer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required> 
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text"4id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+    <label for="answer">correct answer:</label><br>
+    <input typecorrect answerid="answer" name="answer" placeholder="correct answer here" required>    
+    <br>
+
+      
+    <br><label for="question">question 2:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>    
+    <br>
+      <label for="answer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required> 
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text"4id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+    <label for="answer">correct answer:</label><br>
+    <input typecorrect answerid="answer" name="answer" placeholder="correct answer here" required>    
+    <br>
+
+      
+    <br>  <label for="question">question 3:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>    
+    <br>
+      <label for="answer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>  
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text"4id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+    <label for="answer">correct asnwer:</label><br>
+    <input typecorrect answerid="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+      
+<br> <label for="question">question 4:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>    
+    <br>
+      <label for="ancorrect swer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>   
+    <br>
+
+    <label for="answer">correct asnwer:</label><br>
+    <input type="text"4id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text"id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+      
+  <br> <label for="question">question 5:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>    
+    <br>
+      <label for="ancorrect swer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>   
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text"4id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+    <label for="answer">correct asnwer:</label><br>
+    <input typecorrect answerid="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      
+<br> <label for="question">question 6:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>    
+    <br>
+      <label for="ancorrect swer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>  
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text"4id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+    <label for="answer">correct answer:</label><br>
+    <input typecorrect answerid="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+      
+<br> <label for="question">question 7:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>    
+    <br>
+      <label for="ancorrect swer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>   
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text"4id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+    <label for="answer">correct asnwer:</label><br>
+    <input typecorrect answerid="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+
+      
+<br> <label for="question">question 8:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>    
+    <br>
+      <label for="ancorrect swer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">correct answer:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="1.answer in this format" required>    
+    <br>
+      
+
+      
+      
+      
+      <!--       question starts -->
+    <br>  <label for="question">question 9:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>
+    <br>
+      <label for="answer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br> 
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">correct answer:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="1.answer in this format" required>    
+    <br>
+      
+
+      
+      
+      
+<!--       question starts -->
+    <br>  <label for="question">question 10:</label><br>
+    <input type="text" id="question" name="question" placeholder="questi title" required>    
+    <br>
+      <label for="answer">answer 1:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+      <label for="answer">answer 2:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 3:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">answer 4:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="answer here" required>    
+    <br>
+
+    <label for="answer">correct answer:</label><br>
+    <input type="text" id="answer" name="answer" placeholder="1.answer in this format" required>    
+    <br>
+      
+
+      
+      <br>
+      <br>
+    <input type="submit" id="image" value="submit">
+    </form> 
+    </div>
+      
+    <div class="copy1">
+        <h3 class="copyright_reserved">CopyRight © GSV programmers 2022</h3>
+    </div>
+      <script>
+        document.getElementById('image1').addEventListener('change', function(){
+ const choosedFile = this.files[0];
+
+    if (choosedFile) {
+
+        const reader = new FileReader(); 
+
+        reader.addEventListener('load', function(){
+          document.getElementById('image_data1').value = reader.result
+        });
+
+        reader.readAsDataURL(choosedFile);
+
+    }
+})
+        document.getElementById('image2').addEventListener('change', function(){
+ const choosedFile = this.files[0];
+
+    if (choosedFile) {
+
+        const reader = new FileReader(); 
+
+        reader.addEventListener('load', function(){
+          document.getElementById('image_data2').value = reader.result
+        });
+
+        reader.readAsDataURL(choosedFile);
+
+    }
+})
+       document.getElementById('image3').addEventListener('change', function(){
+ const choosedFile = this.files[0];
+
+    if (choosedFile) {
+
+        const reader = new FileReader(); 
+
+        reader.addEventListener('load', function(){
+          document.getElementById('image_data3').value = reader.result
+        });
+
+        reader.readAsDataURL(choosedFile);
+
+    }
+})
+      </script>
+      
+</body>
+<script src="script.js"></script>
+</html>

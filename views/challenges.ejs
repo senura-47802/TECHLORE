@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHLORE | Challenges</title>
+  <link rel="shortcut icon" href="img/main_icon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/">Home</a>
+    <a href="news">News</a>
+    <a href="learn">Learn</a>
+    <a href="blogs">Blogs</a>
+    <a href="contact">Contact</a>
+    <a href="quiz">Quiz</a>
+    <a href="challenges" class="active">Challenges</a>
+    <a href="leaderboard">Leaderboard</a>
+    <% if(!user){ %>
+    <a id="login" href="login">login</a>
+    <% }else{ %>
+    <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data2.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar avatar-popup">
+            </span>
+        </div>
+    <% } %>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+<% for(var i=0; i<data.length; i++) { %>
+      <div class="blog" id="history of pc gaming">
+    <h2><%-data[i].title%></h2>
+    <p><%-data[i].description%>
+    </p>
+        <%const sdate = `${data[i].sdate}`%>
+          <%const edate = `${data[i].edate}`%>
+    <p>Period: <%-sdate.replace('GMT+0000 (Coordinated Universal Time)', '').replace(' 00:00:00', '')%> - <%-edate.replace('GMT+0000 (Coordinated Universal Time)', '').replace(' 00:00:00', '')%></p>
+    <a href="https://techlore.cf/leadeboard.html"><button>
+        <p class="button" alt="button">See the leaderboard</p>
+      </button>
+    </a>
+  </div><br>
+  <%}%>
+      
+  <div class="blog" id="history of pc gaming">
+    <h2>Contribututing Event</h2>
+    <p>Use the below link for Github repository of our site.And find errors and
+      typos.Each issue will get 10 marks in the leaderboard.We will
+      publish the leaderboard in the leaderboard section on 16th december 6PM.If
+      you are the winner of
+      this event you get special role in our discord channel as well.<br> Link to Github repository:
+      <a href="https: //github.com/GSprogrammers/TECHLORE">Use this link</a>
+    </p>
+    <p>Period: 07 December 2022- 15th December 2022</p>
+    <a href="https://techlore.cf/leadeboard.html"><button>
+        <p class="button" alt="button">See the leaderboard</p>
+      </button>
+    </a>
+  </div><br>
+</body>
+<script src="script.js"></script>
+
+</html>

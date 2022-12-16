@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHLORE | Contact</title>
+    <link rel="shortcut icon" href="img/main_icon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/6324e69e50.js" crossorigin="anonymous"></script>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="news">News</a>
+        <a href="learn">Learn</a>
+        <a href="blogs">Blogs</a>
+        <a href="contact" class="active">Contact</a>
+        <a href="quiz">Quiz</a>
+        <a href="challenges">Challenges</a>  
+        <a href="leaderboard">Leaderboard</a>
+        <% if(!user){ %>
+    <a id="login" href="login">login</a>
+    <% }else{ %>
+    <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar avatar-popup">
+            </span>
+        </div>
+    <% } %>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div class="sitemakers">
+        <h1>Meet our Site Developers</h1>
+        <div class="sm-content">
+          <div class="sm-card">
+            <h3>Senura Perera</h3>
+            <p>Front End Designer & Developer</p>
+            <a href="https://wa.me/94769340047" target="_blank"><button class="button_1">
+                <p>Whatsapp <i class="fab fa-whatsapp" style="color:white"></i></p>
+              </button>
+            </a>
+            
+            <a href="https://github.com/senura-47802" target="_blank"><button class="button_1">
+                <p>Github <i class="fab fa-github" style="color:white"></i></p>
+              </button>
+            </a>
+          </div>
+          <div class="sm-card">
+            <h3>Gaviru Fernando</h3>
+            <p>Front End Designer & Developer</p>
+            <a href="https://wa.me/9472 701 3190" target="_blank"><button class="button_1">
+                <p>Whatsapp <i class="fab fa-whatsapp" style="color:white"></i></p>
+              </button>
+            </a>
+            <a href="https://github.com/GAVIFDO" target="_blank"><button class="button_1">
+                <p>Github <i class="fab fa-github" style="color:white"></i></p>
+              </button>
+            </a>
+          </div>
+    <div class="sm-card">
+            <h3>Vidul Batawala</h3>
+      <p>Back End Developer & Logic Designer</p>
+            <a href="https://discordapp.com/users/723861956934762526" target="_blank"><button class="button_1">
+                <p>Discord <i class="fa-brands fa-discord" style="color:white"></i>
+                </p>
+              </button>
+            </a>
+            
+            <a href="https://github.com/VIDULHB" target="_blank"><button class="button_1">
+                <p>Github <i class="fab fa-github" style="color:white"></i></p>
+              </button>
+            </a>
+          </div>      
+        </div>
+        </div>
+
+        <div class="groups">
+            <h2>New to <span>TECHLORE</span> ?</h2>
+            <h3>Join our groups to see announcement and ask questions</h3>
+            <h4></h4>
+            <button class="button_2" type="submit"><a class= "contact_icon" href="https://discord.gg/bx3Qg8g9"><i class="fab fa-discord"></i></a></button>
+            <button class="button_2"  type="submit"><a class= "contact_icon" href="https://chat.whatsapp.com/GmFC6WAukk1JcFHSjyVymn"><i class="fab fa-whatsapp"></i></a>
+          </button>
+          <h4>
+            <span style="font-family: wingdings; font-size: 200%;">&#x2714;</span>You must send messeages professionaly and respectfuly
+<br>
+            <span style="font-family: wingdings; font-size: 200%;">&#x2718;</span>You must not send any unsuitable or vulnerable messeages in our groups
+<br>
+            <span style="font-family: wingdings; font-size: 200%;">&#x2714;</span>if you didn't get any reply you can contact our developers also(don't send them private masseges always)
+<br>
+            <span style="font-family: wingdings; font-size: 200%;">&#x2718;</span>you can't send any media files to our groups(except discord some channels)if you want to ask anything by sending media files, contact developers!
+<br>
+            <span style="font-family: wingdings; font-size: 200%;">&#x2714;</span>if you want to contribute our open source project, here is the link -  <a href="https://github.com/GSprogrammers/TECHLORE">Use this link</a>
+<br>
+            <span style="font-family: wingdings; font-size: 200%;">&#9885;</span> <span class="donate">if you want to donate us just send a message in our discord - donate channel</span> 
+          </h4>
+        </div>
+        
+        <div class="contact" id="contact">
+          <h1>Contact</h1>
+          <div id="form">
+          <form method="POST" action="https://formspree.io/f/xbjbvpqj">
+              <input type="name" name="name" placeholder="Your Name" required="">
+              <input type="email" name="_replyto" placeholder="Your email" required="">
+              <textarea name="message" placeholder="Your Message" required=""></textarea>
+              <button class="button_CONTATC_SUBMIT" type="submit">Send    <i class="fa fa-paper-plane "></i></button>
+          </form>
+          </div>
+      </div>
+      <div class="copy">
+        <h3 class="copyright_reserved">CopyRight © GSV programmers 2022</h3>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

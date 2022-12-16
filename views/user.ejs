@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHLORE | User Profile</title>
+    <link rel="shortcut icon" href="img/main_icon.png" />
+  <script src="https://kit.fontawesome.com/6324e69e50.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  <script src="https://js.upload.io/upload-js/v2"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="news">News</a>
+        <a href="learn">Learn</a>
+        <a href="blogs">Blogs</a>
+        <a href="contact">Contact</a>
+        <a href="quiz">Quiz</a>
+        <a href="challenges">Challenges</a>
+        <a href="leaderboard">Leaderboard</a>
+        <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar">
+            </span>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+      
+  <div class="userall">
+    <div class="user-dashboard">
+          <div class="user-avatar1" style="top:20%;" id="imagebox">
+       <img src="<%-data.avatar%>" id="photo">
+            <h2 style="text-align: center; margin-top: 60px; color:white;" id="photobar">test</h2>
+          <input type="file" id="file" accept=".img,.png,.jpg,.jpeg,.svg,.avif,.gif,.wpeg">
+          <label for="file" id="uploadBtn">Choose Photo</label>
+          </div>
+            <div class="dashboard" style="margin-top: 150px;">
+        <h1>Hello!<br> <span class="username"><%-data.username%></span></h1>
+        <h2>Name :<span class="age"> <%-data.name%></span>
+          <br>Age :<span class="age"> <%-data.Age%></span>
+        <br>Email : <span class="email"><%-data.email%></span></h2>
+      <%if(data.admin === true){%>
+      <a href="/admin" style="cursor: pointer; text-decoration: none">
+      <button class="admin_button">Admin Dashboard</button><br>
+      </a>
+        <%}%>
+            </div>
+   </div>
+ </div>
+  
+
+        <div class="user-leaderboard">
+          <h1>Leaderboard</h1>
+          <i class='fas fa-medal' style='font-size:100px;color:#2b96f3;'></i>
+          <% for(var i=0; i<board.length; i++) { %>
+          <%if(board[i].email === `${user}`){%>
+          <h2>Place : <span class="place">You are <%-i+1%></span></h2>
+            <%}%>
+              <%}%>
+          <h2>Contributes : <span class="place"><%-data.quizcount%></span></h2>
+          <h2>Points : <span class="place"><%-data.points%></span></h2>
+          <h1><span>Congratz!</span></h1>
+        </div>
+
+        <div class="user-quiz">
+          <h1>Quizes</h1>
+          <i class='fas fa-user-graduate' style='font-size:100px;color:#2b96f3;'></i>
+          <h2>Quizes : <span class="place"><%-data.points%></span></h2>
+          <h2>Total : <span class="place"><%-data.quizcount%></span></h2>
+          <h2>Average : <span class="place"><%-data.points/data.quizcount%></span></h2>
+          <h1><span>Try More!</span></h1>
+        </div>
+
+        <div class="user-anaylics">
+          <h1>Analytics</h1>
+          <i class='	fa fa-line-chart' style='font-size:100px;color:#2b96f3;'></i>
+          <h2>Logins : <span class="place">We Got <%-time%></span></h2>
+          <h2>Normal Users : <span class="place"><%-normal%></span></h2>
+          <h2>Admin Usres : <span class="place"><%-admin%></span></h2>
+          <h1><span>Thanks For Support!</span></h1>
+        </div>
+    
+<script>
+  document.getElementById('file').addEventListener('change', function(){
+ const choosedFile = this.files[0];
+
+    if (choosedFile) {
+
+        const reader = new FileReader(); 
+
+        reader.addEventListener('load', function(){
+        document.getElementById('photo').setAttribute('src', reader.result);
+     axios.post('/avatar', {
+    fileUrl: `${reader.result}`,
+       email: `<%-data.email%>`,
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+          window.location.reload();
+     
+});
+
+        reader.readAsDataURL(choosedFile);
+
+    }
+})
+</script>
+</body>
+<script src="script.js"></script>
+</html>

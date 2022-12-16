@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHLORE | News</title>
+    <link rel="shortcut icon" href="img/main_icon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Unicons CSS -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+                        
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="news" class="active">News</a>
+        <a href="learn">Learn</a>
+        <a href="blogs">Blogs</a>
+        <a href="contact">Contact</a>
+        <a href="quiz">Quiz</a>
+        <a href="challenges">Challenges</a>
+        <a href="leaderboard">Leaderboard</a>
+        <% if(!user){ %>
+    <a id="login" href="login">login</a>
+    <% }else{ %>
+    <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar avatar-popup">
+            </span>
+        </div>
+    <% } %>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      <a class ="search_bar"><i class="fa fa-search"></i></a>
+        </div>
+    <% for(var i=0; i<newss.length; i++) { %>
+<div class="blog">
+        <h2>
+          <%-newss[i].title%>
+        </h2>
+          <p>
+            <%-newss[i].description%>
+          </p>
+  <%const date = `${newss[i].date}`%>
+          <p>Date: <%-date.replace('GMT+0000 (Coordinated Universal Time)', '').replace(' 00:00:00', '')%></p>
+          <a href="<%-newss[i].link%>" target="_blank"><button>
+          <p class="button" alt="button">Read all</p>
+          </button>
+          </a>
+          <img src="<%-newss[i].image_link%>" alt="blog1img" class="blogimg">
+      </div><br>
+        
+      </div>
+     <% } %>
+      <div class="blog">
+        <h2><span class="hello">Do you want more news</span></h2>
+          <p>We will add more news daily to TECHLORE site. So be pacient and refer other sections if you read all this news. Also we are deleting news after a month of issue.</p>
+      </div>
+      <div class="copy">
+        <h3 class="copyright_reserved">CopyRight © GSV programmers 2022</h3>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

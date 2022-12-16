@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHLORE | Quiz</title>
+  <link rel="shortcut icon" href="img/main_icon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="news">News</a>
+        <a href="learn">Learn</a>
+        <a href="blogs">Blogs</a>
+        <a href="contact">Contact</a>
+        <a href="quiz" class="active">Quiz</a>
+        <a href="challenges">Challenges</a>
+        <a href="leaderboard">Leaderboard</a>
+        <% if(!user){ %>
+    <a id="login" href="login">login</a>
+    <% }else{ %>
+    <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar avatar-popup">
+            </span>
+        </div>
+    
+    <% } %>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>    
+
+      <div class="blog">
+        <h2>Quiz title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>
+          <a href="/quizes"_blank"><button>
+          <p class="button" alt="button" style="font-weight: bolder;">Do now</p>
+          </button>
+          </a>
+          <img src="https://www.shutterstock.com/image-photo/example-word-written-on-wooden-260nw-1765482248.jpg" alt="blog1img" class="blogimg">
+      </div>
+      
+      <div class="copy1">
+        <h3 class="copyright_reserved">CopyRight © GSV programmers 2022<h3>
+      </div>
+</body>
+<script src="script.js"></script>
+</html>

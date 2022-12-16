@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHLORE | Login</title>
+    <link rel="shortcut icon" href="img/main_icon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="topnav" id="myTopnav">
+        <a href="/">Home</a>
+        <a href="news">News</a>
+        <a href="learn">Learn</a>
+        <a href="blogs">Blogs</a>
+        <a href="contact">Contact</a>
+        <a href="quiz">Quiz</a>
+        <a href="challenges">Challenges</a>
+        <a href="leaderboard">Leaderboard</a>
+        <a id="login" class="active" href="login">login</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+  <div class="login_form"  action="/signup" method="post">
+    <h1>Sign-Up Form</h1>
+    <form method="post">
+    <div class="imgcontainer">
+    <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label><br>
+    <input type="text" placeholder="Enter Username" name="username" required><br>
+
+    <label for="name"><b>Name</b></label><br>
+    <input type="text" placeholder="Enter Your Name" name="name" required><br>
+
+    <label for="age"><b>Age</b></label><br>
+    <input type="text" placeholder="Enter Your Age" name="age" required><br>
+
+    <label for="email"><b>Email</b></label><br>
+    <input type="email" placeholder="Enter Your Email" name="email" required>
+<br>
+      <label for="psw"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" name="password" required><br>
+
+    <button type="submit">Sign up</button><br>
+    </div>
+</form>
+    <p  style="color: white;">Have a Account? <a href="/login" style="color: #2b96f3;">Login</a><p>
+    </div>
+  
+    <div class="copy1">
+        <h3 class="copyright_reserved">CopyRight © GSV programmers 2022</h3>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHLORE | 404</title>
+  <link rel="shortcut icon" href="img/main_icon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/6324e69e50.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/">Home</a>
+    <a href="news">News</a>
+    <a href="learn">Learn</a>
+    <a href="blogs">Blogs</a>
+    <a href="contact">Contact</a>
+    <a href="quiz">Quiz</a>
+    <a href="challenges">Challenges</a>
+    <a href="leaderboard">Leaderboard</a>
+    <% if(!user){ %>
+    <a id="login" href="login">login</a>
+    <% }else{ %>
+    <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar avatar-popup">
+            </span>
+        </div>
+    <% } %>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+    <div class="error">
+        <p><div class="error-massage">403</div><br><%-msg%></p>
+        <p>we have more time because we are doing it without any fees and money no so we haven't more developers. but we will do that be pacient!</p>
+        <p>How to donate our site:<br> you have to put massage in our <a href="https://discord.gg/bx3Qg8g9">Discord server</a> donate channel</p>
+        <p>We are appreciating your valuable donation also.</p>
+      </div>
+      
+  <div class="copy1">
+    <h3 class="copyright_reserved">CopyRight © GSa V programmers 2022</h3>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>

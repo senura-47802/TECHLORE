@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECHLORE | Home</title>
+  <link rel="shortcut icon" href="img/main_icon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/6324e69e50.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/" class="active">Home</a>
+    <a href="news">News</a>
+    <a href="learn">Learn</a>
+    <a href="blogs">Blogs</a>
+    <a href="contact">Contact</a>
+    <a href="quiz">Quiz</a>
+    <a href="challenges">Challenges</a>
+    <a href="leaderboard">Leaderboard</a>
+    <% if(!user){ %>
+    <a id="login" href="login">login</a>
+    <% }else{ %>
+    <div id="user-avatar">
+          <span onclick="userlink()">
+      <img src="<%-data.avatar%>" width="45" height="45" style="border-radius: 50px; border-color: rgb(188, 233, 251); border-width: 5px; cursor: pointer;" class="user-avatar avatar-popup">
+            </span>
+        </div>
+    <% } %>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div class="hero">
+    <div class="hero-title">
+      <h1>What is <span>TECHLORE</span> ?</h1>
+    </div>
+    <div class="hero-info">
+      <p>Techlore is a platform which you can improve in any field in ICT made by three web developers in Sri Lanka.This
+        is a open source platform anyone can access and doing anything without any fees</p>
+
+      <p>You can get guides about how to improve and start your ICT career in all the fields and You can notify about
+        latest news in ICT World. There are many blogs in our blogs tab you can refer them and be a smart person in your
+        social medias and with among friends...
+      </p>
+
+      <p>
+        from news tab you can notify about latest news about Technology daily. and out name also made by connecting
+        Technology and Explore becase the one who you are a explore thats why you come to our awesome site!
+      </p>
+    </div>
+  </div>
+
+  <div class="future">
+    <div class="future-title">
+      <h1>What are the <span>UPDTAES</span> in future?</h1>
+    </div>
+    <div class="future-info">
+      <p>
+        there are so many cool things that we are trying to add in future. simply thats are awesome and will giv you
+        more expereince. below paragraphs are containing those idea. we are highly trying add those!
+      </p>
+
+      <p>
+        first of all, our first i dea to create a quiz section! So you can play quizes and get points after that we can
+        create a leaderboard then we are trying to give small gifts to users by donations that users are giving. thats
+        an idea only it should be done or no!
+
+        in addtion, we are thinkin to create a challenge section and giving ou challenges weekly then we choose a winner
+        and putting there projects in our instargrame page!These all are ideas that depending on your donations to our
+        site...
+      </p>
+      <p>How to donate our site:
+        <br> you have to put massage in our
+        <a href="https://discord.gg/bx3Qg8g9">Discord server</a>
+        </a> donate channel
+      </p>
+    </div>
+
+  </div>
+
+  <div class="future">
+    <div class="future-title">
+      <h1>How to contibute to <span>TECHLORE</span> site open source project?</h1>
+    </div>
+    <div class="future-info">
+      <p>
+        How to contribute to our github open source code:<br>
+        <a href="https://github.com/GSprogrammers/TECHLORE">Use this link</a> for our open source .
+      </p>
+      <p>If you are the first contributor in our open source code you will get special role in our discord channel to
+        you.<br>
+        You have to fill this out below the page when you contribute, Depending on the value of the contribution will be calculated to get special role in discord
+        discord.</p>
+    </div>
+    <div class="contact" id="contact">
+      <h1>To get a special role when you are the first contributor to our open-source project.</h1>
+      <div id="form">
+        <form method="POST" action="https://formspree.io/f/xbjbvpqj">
+          <input type="name" name="name" placeholder="Your Name" required="">
+          <input type="discord-username" name="Discord-username" placeholder="Your Discord Username" required="">
+          <input type="GitHub-username" name="GitHub-username" placeholder="Your GitHub username" required="">
+         <button class="button_CONTATC_SUBMIT" type="submit">Send  <i class="fa fa-paper-plane "></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy1">
+    <h3 class="copyright_reserved">CopyRight © GSa V programmers 2022</h3>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>
